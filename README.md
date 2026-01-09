@@ -158,7 +158,7 @@ En un escenario de ejecución, el entorno se prepararía de la siguiente forma:
 
 **Crear Azure AI Document Intelligence (OCR)**
 
-📍 Azure Portal
+Azure Portal:
 Buscar Azure AI Document Intelligence
 Crear nuevo recurso
 Seleccionar:
@@ -166,8 +166,6 @@ Resource Group: rg-ia-clasificacion-pdf
 Región
 Plan: Standard (S0)
 Crear
-
-📌 Esto es parte del entorno de ejecución, porque aquí se ejecuta el OCR.
 
 ![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntell.jpg)
 
@@ -179,8 +177,7 @@ Crear
 
 
 **Crear Azure OpenAI (LLM)**
-Azure Portal
-
+Azure Portal:
 Buscar Azure OpenAI
 Crear recurso
 Seleccionar:
@@ -198,22 +195,17 @@ Crear
 
 Ir al Portal de Foundry
 
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/project.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/project.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry.jpg)
 
 
  Selecciona el proyecto correcto
 
 Una vez dentro de Foundry:
-
 Arriba o en el panel inicial, selecciona:
-
 Subscription: Azure subscription 1
-
 Project: projectdocumental
-
 Resource Group: rg-ia-clasificacion-documental
 
 ![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry2.jpg)
