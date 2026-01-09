@@ -150,12 +150,6 @@ AZURE_OPENAI_DEPLOYMENT=
 FORM_RECOGNIZER_ENDPOINT=
 FORM_RECOGNIZER_KEY=
 ```
-
-El archivo real .env no se versiona y se encuentra incluido en el archivo .gitignore.
-Preparación del entorno (documentado)
-
-En un escenario de ejecución, el entorno se prepararía de la siguiente forma:
-
 **Crear Azure AI Document Intelligence (OCR)**
 
 Azure Portal:
@@ -200,40 +194,31 @@ Ir al Portal de Foundry
 ![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry.jpg)
 
 
- Selecciona el proyecto correcto
+ Seleccionar el proyecto correcto
+ y verificar:
 
-Una vez dentro de Foundry:
-Arriba o en el panel inicial, selecciona:
 Subscription: Azure subscription 1
 Project: projectdocumental
 Resource Group: rg-ia-clasificacion-documental
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry2.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry2.jpg)
 
 **Ir a Deployments / Implementaciones**
 
-En el menú izquierdo de Foundry busca:
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry3.jpg)
 
-Deployments
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry4.jpg)
 
-Model deployments
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry5.jpg)
 
-Implementaciones
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry6.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry3.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry4.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry5.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry6.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry7.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/foundry7.jpg)
 
 ![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/foundry8.jpg)
 
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/keys_endpoinst.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots//keys_endpoinst.jpg)
 
 # Actividad 6 Ingesta de documentos PDF
 
