@@ -1,0 +1,8 @@
+import os
+
+FORM_ENDPOINT = os.getenv("FORM_ENDPOINT")
+FORM_KEY = os.getenv("FORM_KEY")
+
+OPENAI_ENDPOINT = os.getenv("OPENAI_ENDPOINT")
+OPENAI_KEY = os.getenv("OPENAI_KEY")
+OPENAI_DEPLOYMENT = os.getenv("OPENAI_DEPLOYMENT")
