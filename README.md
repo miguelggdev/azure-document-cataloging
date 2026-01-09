@@ -68,7 +68,12 @@ De esta manera, se reduce la intervención manual y se mejora la eficiencia del 
 
 # Actividad 3 Diseño de la solución (técnico)
 
-La solución se basa en una arquitectura simple y modular que separa claramente cada responsabilidad del proceso:
+Se opta por una arquitectura basada en eventos, donde la carga de documentos desencadena automáticamente el procesamiento y clasificación.
+
+![arquitectura](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/arquitectura.png)
+
+**- Ingesta de documentos:**
+Se cargan documentos en un Blob desde la consola de Azure o CLI
 
 **- Extracción de texto:**
 Se utiliza Azure AI Document Intelligence para extraer texto desde documentos PDF.
@@ -119,6 +124,11 @@ az group create \
 ![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/grupo_recursos.jpg)
 
 ![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/grupo_recursos2.jpg)
+
+**Creación Almacenamiento de datos Azure Blob Storage**
+![contenedores](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedor.jpg)
+
+![contenedores](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedores_creados.jpg)
 
 **Gestión de dependencias**
 
