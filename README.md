@@ -232,12 +232,12 @@ Cada carga de archivo genera un evento de almacenamiento.
 
 Los documentos PDF se organizan en una carpeta dedicada dentro del proyecto, clasificados inicialmente por tipo únicamente con fines de prueba y validación.
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/ingesta.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/ingesta.jpg)
 
 contenedor
-![contenedor](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/contenedor.jpg)
+![contenedor](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedor.jpg)
 
-![contenedor](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/contenedores_creados.jpg)
+![contenedor](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedores_creados.jpg)
 
 
 # Actividad 7 – Clasificación documental con Azure OpenAI
