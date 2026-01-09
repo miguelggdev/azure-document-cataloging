@@ -222,27 +222,22 @@ Resource Group: rg-ia-clasificacion-documental
 
 # Actividad 6 Ingesta de documentos PDF
 
-La solución implementa un mecanismo de ingesta de documentos PDF que permite cargar uno o varios archivos para su posterior procesamiento automático.
-Para efectos de esta prueba técnica, la ingesta se realiza desde una estructura de carpetas local dentro del repositorio, la cual simula el origen de los documentos que recibe la organización.
+Para el proyecto se propone realizar la ingesta de documentos en un Blob Storage para centralizar la carga de documentos PDF y habilitar el procesamiento automático por eventos.
 
-Este enfoque permite:
-Validar fácilmente el funcionamiento de la solución
-Procesar múltiples documentos en un solo flujo
-Mantener la solución simple, reproducible y alineada con el alcance de la prueba
+Se utiliza Azure Blob Storage como repositorio de entrada.
 
-Enfoque técnico de la ingesta
-El proceso de ingesta consiste en:
-Recorrer de forma automática la carpeta data/pdfs
-Identificar todos los archivos con extensión .pdf
-Enviar cada documento al flujo de extracción y clasificación
-Procesar los documentos de manera independiente
-Este enfoque permite escalar fácilmente el número de documentos sin modificar el código.
-Estructura de entrada de documentos
+Se crea un contenedor llamado input-pdfs.
+Los documentos PDF son cargados manualmente o vía CLI.
+Cada carga de archivo genera un evento de almacenamiento.
 
 Los documentos PDF se organizan en una carpeta dedicada dentro del proyecto, clasificados inicialmente por tipo únicamente con fines de prueba y validación.
 
 ![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/ingesta.jpg)
 
+contenedor
+![contenedor](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/contenedor.jpg)
+
+![contenedor](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/contenedores_creados.jpg)
 
 
 # Actividad 7 – Clasificación documental con Azure OpenAI
