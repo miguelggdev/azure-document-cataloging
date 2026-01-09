@@ -44,8 +44,6 @@ Selección del ambiente de ejecución
 
 Para el desarrollo de este proyecto **se eligió la modalidad Azure, utilizando servicios de Azure AI**, principalmente Azure Document Intelligence para la extracción de texto desde documentos PDF y Azure OpenAI para el análisis semántico y la clasificación automática.
 
-Esta modalidad permite cumplir con los requerimientos del caso de uso, manteniendo una arquitectura empresarial, segura y escalable.
-
 # Actividad 2 Diseño de la solución (funcional)
 
 **Contexto del problema**
@@ -72,46 +70,39 @@ De esta manera, se reduce la intervención manual y se mejora la eficiencia del 
 
 La solución se basa en una arquitectura simple y modular que separa claramente cada responsabilidad del proceso:
 
-- Extracción de texto:
+**- Extracción de texto:**
 Se utiliza Azure AI Document Intelligence para extraer texto desde documentos PDF.
 
-- Preprocesamiento:
+**- Preprocesamiento:**
 El texto extraído se limpia y normaliza para facilitar su análisis.
 
-- Análisis semántico y clasificación:
+**- Análisis semántico y clasificación:**
 El texto procesado se envía a un modelo de lenguaje de Azure OpenAI, el cual clasifica el documento y genera una justificación basada en su contenido.
 
-- Generación de resultados:
+**- Generación de resultados:**
 El resultado final se estructura en un formato legible (JSON), que puede ser utilizado por otros sistemas o procesos posteriores.
 
-![Flujo-de-trabajo](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/flujo_trabajo.png)
+![Flujo-de-trabajo](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/flujo_trabajo.png)
 
 # Actividad 4 – Selección y uso del LLM
 
-Modelo seleccionado
+**Modelo seleccionado**
 
-Se utiliza un modelo de lenguaje grande (LLM) proporcionado por Azure OpenAI, como GPT-4 o GPT-4o.
+Se utiliza un modelo de lenguaje grande (LLM) proporcionado por Azure OpenAI, como GPT-4
 
 **Justificación del uso del LLM**
 
-Permite comprender el contenido semántico del documento, no solo palabras clave
-
-Se adapta a diferentes tipos de documentos sin necesidad de entrenamiento adicional
-
-Genera clasificaciones explicables y coherentes
-
-Reduce la necesidad de reglas rígidas o modelos tradicionales de clasificación
-
-Azure OpenAI ofrece además ventajas a nivel de seguridad, cumplimiento y control del acceso, lo cual es clave en entornos empresariales.
+- Permite comprender el contenido semántico del documento, no solo palabras clave.
+- Se adapta a diferentes tipos de documentos sin necesidad de entrenamiento adicional.
+- Genera clasificaciones explicables y coherentes.
+- Reduce la necesidad de reglas rígidas o modelos tradicionales de clasificación.
 
 # Actividad 5 – Configuración del entorno
 
-Definición del entorno
+**Definición del entorno**
 
-PAra este proyecto el entorno de ejecucion se define como Servicio de IA gestionado (PaaS), usando Azure AI Document Intelligence yAzure OpenAI.
-
+Para este proyecto el entorno de ejecucion se define como Servicio de IA gestionado (PaaS), usando Azure AI Document Intelligence yAzure OpenAI. 
 El codigo se desarrolla para python, pero se ejecuta y procesa con Azure 
-
 Dependencias declaradas en requirements.txt
 Manejo de credenciales mediante variables de entorno
 Separación clara entre código fuente, datos de entrada y resultados
@@ -125,12 +116,14 @@ az group create \
   --name rg-ia-clasificacion-documental \
   --location eastus
 ```
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/grupo_recursos.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/grupo_recursos.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/grupo_recursos2.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/grupo_recursos2.jpg)
+
 **Gestión de dependencias**
 
 El proyecto está estructurado para ejecutarse en un entorno Python y define sus dependencias en el archivo requirements.txt, lo que permite recrear el entorno de forma controlada:
+
 ```python
 openai
 azure-ai-formrecognizer
@@ -176,14 +169,13 @@ Crear
 
 📌 Esto es parte del entorno de ejecución, porque aquí se ejecuta el OCR.
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/documentIntell.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntell.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/documentIntel2.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel2.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/documentIntel3.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel3.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/documentIntel4.jpg)
-
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel4.jpg)
 
 
 **Crear Azure OpenAI (LLM)**
@@ -196,13 +188,13 @@ Resource Group: rg-ia-clasificacion-pdf
 Región
 Crear
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/OpenAI.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/OpenAI.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/OpenAI2.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/OpenAI2.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/OpenAI3.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/OpenAI3.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azureML/blob/main/project-01-azureml-sklearn/screenshots/OpenAI4.jpg)
+![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/OpenAI4.jpg)
 
 Ir al Portal de Foundry
 
