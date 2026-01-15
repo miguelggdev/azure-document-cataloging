@@ -241,39 +241,34 @@ contenedor
 
 # Actividad 7 – Clasificación documental con Azure OpenAI
 
-En esta actividad se implementa la clasificación automática de documentos utilizando Azure OpenAI, a partir del texto previamente extraído desde los archivos PDF.
+Se implementa la clasificación automática de documentos utilizando Azure OpenAI, a partir del texto previamente extraído desde los archivos PDF.
 
 El modelo de lenguaje analiza el contenido completo del documento y determina:
 
-La categoría documental
-
-Una justificación breve basada en el contenido
-
-Este enfoque permite realizar una clasificación semántica, superando las limitaciones de reglas estáticas o palabras clave.
-
-Categorías definidas
+- La categoría documental
+- Una justificación breve basada en el contenido
+- Realizar la clasificación semántica
+- Categorías definidas
 
 Las categorías manejadas por la solución son:
 
-Contrato
-Queja
-Resolución
-Informe
-Comunicación
-Otro
-Estas categorías pueden ampliarse sin modificar la arquitectura general.
+- Contrato
+- Queja
+- Resolución
+- Informe
+- Comunicación
+- Otro
 
-Enfoque técnico
+
+** Enfoque técnico **
 
 El flujo de clasificación se basa en:
 
-Recepción del texto extraído del PDF
-
-Envío del texto a un deployment de Azure OpenAI
-
-Uso de un prompt estructurado para guiar la respuesta
-
-Obtención de una salida controlada y explicable
+- Carga del archivo al Blob
+- Recepción del texto extraído del PDF
+- Envío del texto a un deployment de Azure OpenAI
+- Uso de un prompt estructurado para guiar la respuesta
+- Json de Salida
 
 9
 Diseño del prompt
@@ -338,19 +333,12 @@ En esta actividad se diseña un prompt estructurado y explicable para guiar al m
 El prompt define explícitamente:
 
 El rol del modelo
-
 Las categorías permitidas
-
 El formato de salida
-
 El contexto del documento
-
 Esto garantiza respuestas:
-
 Consistentes
-
 Interpretables
-
 Fáciles de auditar
 
 Objetivo del prompt
@@ -379,7 +367,7 @@ Explicabilidad: justificación obligatoria
 
 Prompt definitivo utilizado en la solución
 
-📌 Este prompt es el que se utiliza en classify.py
+ Este prompt es el que se utiliza en classify.py
 
 *Eres un asistente experto en clasificación documental.
 
