@@ -323,7 +323,7 @@ def preprocess_text(text):
 ```
 # Actividad 9
 
-En esta actividad se diseña un prompt estructurado para guiar al modelo de lenguaje (Azure OpenAI) en la clasificación documental.
+En esta actividad se diseña un prompt estructurado para guiar al modelo de lenguaje (Azure OpenAI) en la clasificación documental, definiendo roles, categorías cerradas y un formato de salida en JSON.
 
 El prompt define explícitamente:
 
@@ -352,10 +352,10 @@ El diseño del prompt sigue buenas prácticas para LLMs:
 - Restricción: categorías cerradas
 - Estructura: salida en formato JSON
 
-** Prompt definitivo utilizado en la solución **
+**Prompt definitivo utilizado en la solución**
 
  Este prompt es el que se utiliza en classify.py
-
+```python
 *Eres un asistente experto en clasificación documental.
 
 Analiza el siguiente texto y clasifícalo en UNA de las siguientes categorías:
@@ -374,62 +374,25 @@ Devuelve únicamente un JSON con esta estructura:
 
 Texto del documento:
 {document_text}*
+```
 
-Explicación del prompt (parte por parte)
-1️⃣ Definición del rol
-
-“Eres un asistente experto en clasificación documental”
-
-🔹 Orienta el comportamiento del modelo
-🔹 Reduce respuestas creativas o irrelevantes
-
-2️⃣ Definición explícita de categorías
-
-🔹 Evita clasificaciones abiertas
-🔹 Facilita evaluación y métricas
-🔹 Permite extender categorías sin cambiar arquitectura
-
-3️⃣ Formato de salida estructurado
-{
-  "categoria": "...",
-  "justificacion": "..."
-}
-
-
-🔹 Permite parsing automático
-🔹 Mejora trazabilidad
-🔹 Facilita auditoría del resultado
-
-4️⃣ Inclusión del texto completo
-
-🔹 El modelo tiene todo el contexto
-🔹 Permite inferencia semántica real
-🔹 Evita dependencias de reglas o keywords
 
 Justificación de la solución
 
 Se eligió un prompt estructurado porque:
 
-Reduce variabilidad del modelo
+- Reduce variabilidad del modelo
+- Aumenta la confiabilidad del resultado
+- Facilita integración con otros sistemas
+- Permite explicar cada decisión del modelo
 
-Aumenta la confiabilidad del resultado
-
-Facilita integración con otros sistemas
-
-Permite explicar cada decisión del modelo
-
-Este diseño cumple principios de IA explicable (XAI).
-
-Resultado de la actividad
+**Resultado de la actividad**
 
 ✔ Prompt claro y documentado
 ✔ Salida estructurada
 ✔ Clasificación explicable
 ✔ Fácil de mantener y extender
 
-📌 Texto recomendado para el README
-
-Se diseñó un prompt estructurado para la clasificación documental, definiendo roles, categorías cerradas y un formato de salida en JSON, garantizando resultados explicables y consistentes por parte del modelo de lenguaje.
 
 # Actividad 10
 
