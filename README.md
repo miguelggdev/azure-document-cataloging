@@ -239,7 +239,7 @@ contenedor
 ![contenedor](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedores_creados.jpg)
 
 
-# Actividad 7 – Clasificación documental con Azure OpenAI
+# Actividad 6 – Clasificación documental con Azure OpenAI
 
 Se implementa la clasificación automática de documentos utilizando Azure OpenAI, a partir del texto previamente extraído desde los archivos PDF.
 
@@ -260,7 +260,7 @@ Las categorías manejadas por la solución son:
 - Otro
 
 
-** Enfoque técnico **
+**Enfoque técnico**
 
 El flujo de clasificación se basa en:
 
@@ -270,6 +270,16 @@ El flujo de clasificación se basa en:
 - Uso de un prompt estructurado para guiar la respuesta
 - Json de Salida
 
+# Actividad 7 - Extraccion del texto
+
+El documento PDF subido al Blob se transforma en texto estructurado para ser entregado el LLM
+
+FLUJO PASO A PASO DE LA EXTRACCIÓN
+- Se detecta el archivo PDF se sube a Blob Storage y se dispara la Azure Function (Blob Trigger)
+- Se envía el PDF a Document Intelligence, el archivo se abre en binario y se envía al endpoint del servicio
+- Azure analiza el documento  y realiza el reconocimiento de texto
+- Se recupera el resultado, Azure devuelve un objeto estructurado, se recorren páginas → líneas
+- Se concatena el texto y queda listo para procesar por el LLM
 
 # Actividad 8 – Preprocesamiento del texto
 
@@ -289,13 +299,8 @@ Limpieza de espacios innecesarios
 Normalización básica del texto
 Preparación del contenido para inferencia
 
-No se realiza:
 
-Tokenización avanzada
-Eliminación semántica
-Análisis lingüístico profundo
-
-Enfoque técnico
+# Actividad 8 
 
 El texto preprocesado se obtiene a partir del texto plano generado por Azure Document Intelligence y se procesa mediante funciones simples en Python, manteniendo la trazabilidad del contenido original.
 
@@ -426,11 +431,8 @@ La clasificación se realiza mediante:
 Un deployment de Azure OpenAI configurado en Azure AI Foundry
 
 Un prompt estructurado
-
 Una llamada controlada al endpoint del modelo
-
 Manejo defensivo de la respuesta
-
 Esto garantiza resultados consistentes, trazables y explicables.
 
 codigo main.py
@@ -516,7 +518,7 @@ Se utiliza una técnica de chunking, que consiste en dividir el texto en fragmen
 Los modelos de lenguaje tienen un límite máximo de tokens por solicitud.
 Los documentos PDF extensos (contratos largos, informes, resoluciones) pueden superar fácilmente ese límite.
 
-** Estrategia aplicada **
+**Estrategia aplicada**
 
 La solución implementa un chunking simple y efectivo, basado en:
 
