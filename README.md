@@ -233,9 +233,6 @@ Se crea un contenedor llamado input-pdfs.
 Los documentos PDF son cargados manualmente o vía CLI.
 Cada carga de archivo genera un evento de almacenamiento.
 
-
-![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/ingesta.jpg)
-
 contenedor
 ![contenedor](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/contenedor.jpg)
 
