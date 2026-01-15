@@ -39,8 +39,7 @@ Se puede usar estas u otras (deben documentarse):
 
 ## Actividades de desarrollo
 
-# Actividad 1
-Selección del ambiente de ejecución
+# Actividad 1 Selección del ambiente de ejecución
 
 Para el desarrollo de este proyecto **se eligió la modalidad Azure, utilizando servicios de Azure AI**, principalmente Azure Document Intelligence para la extracción de texto desde documentos PDF y Azure OpenAI para el análisis semántico y la clasificación automática.
 
