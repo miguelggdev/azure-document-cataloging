@@ -67,7 +67,7 @@ De esta manera, se reduce la intervención manual y se mejora la eficiencia del 
 
 # Actividad 3 Diseño de la solución (técnico)
 
-Se opta por una arquitectura basada en eventos, donde la carga de documentos desencadena automáticamente el procesamiento y clasificación.
+Se opta por una arquitectura basada en eventos y serverless, donde la carga de documentos desencadena automáticamente el procesamiento y clasificación.
 
 ![arquitectura](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/arquitectura.png)
 
@@ -96,10 +96,10 @@ Se utiliza un modelo de lenguaje grande (LLM) proporcionado por Azure OpenAI, co
 
 **Justificación del uso del LLM**
 
-- Permite comprender el contenido semántico del documento, no solo palabras clave.
+- Permite comprender el contenido semántico del documento.
 - Se adapta a diferentes tipos de documentos sin necesidad de entrenamiento adicional.
 - Genera clasificaciones explicables y coherentes.
-- Reduce la necesidad de reglas rígidas o modelos tradicionales de clasificación.
+
 
 # Actividad 5 – Configuración del entorno
 
