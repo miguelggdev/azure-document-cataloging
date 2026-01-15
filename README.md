@@ -173,13 +173,6 @@ Crear
 
 ![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntell.jpg)
 
-![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel2.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel3.jpg)
-
-![grupo-drecursos](https://github.com/miguelggdev/azure-document-cataloging/blob/main/project--azure-document-cataloging/screenshots/documentIntel4.jpg)
-
-
 **Crear Azure OpenAI (LLM)**
 Azure Portal:
 Buscar Azure OpenAI
@@ -291,7 +284,7 @@ Crear un prompt estructurado para clasificación con LLM
 
 
 
-# Actividad 7  8 – Preprocesamiento del texto
+# Actividad 8 – Preprocesamiento del texto
 
 En esta actividad se realiza el preprocesamiento básico del texto extraído desde los documentos PDF, con el objetivo de normalizar y preparar la información antes de enviarla al modelo de lenguaje para inferencia.
 
