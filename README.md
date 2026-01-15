@@ -270,11 +270,6 @@ El flujo de clasificación se basa en:
 - Uso de un prompt estructurado para guiar la respuesta
 - Json de Salida
 
-9
-Diseño del prompt
-Crear un prompt estructurado para clasificación con LLM
-
-
 
 # Actividad 8 – Preprocesamiento del texto
 
@@ -328,18 +323,14 @@ def preprocess_text(text):
 ```
 # Actividad 9
 
-En esta actividad se diseña un prompt estructurado y explicable para guiar al modelo de lenguaje (Azure OpenAI) en la clasificación documental.
+En esta actividad se diseña un prompt estructurado para guiar al modelo de lenguaje (Azure OpenAI) en la clasificación documental.
 
 El prompt define explícitamente:
 
-El rol del modelo
-Las categorías permitidas
-El formato de salida
-El contexto del documento
-Esto garantiza respuestas:
-Consistentes
-Interpretables
-Fáciles de auditar
+- El rol del modelo
+- Las categorías permitidas
+- El formato de salida
+- El contexto del documento
 
 Objetivo del prompt
 
@@ -357,15 +348,11 @@ Principios de diseño del prompt
 
 El diseño del prompt sigue buenas prácticas para LLMs:
 
-Claridad: instrucciones directas y sin ambigüedad
+- Claridad: instrucciones directas y sin ambigüedad
+- Restricción: categorías cerradas
+- Estructura: salida en formato JSON
 
-Restricción: categorías cerradas
-
-Estructura: salida en formato JSON
-
-Explicabilidad: justificación obligatoria
-
-Prompt definitivo utilizado en la solución
+** Prompt definitivo utilizado en la solución **
 
  Este prompt es el que se utiliza en classify.py
 
@@ -550,9 +537,6 @@ if __name__ == "__main__":
         print("-" * 50)
 ```
 
-
-        ✅ Qué hace este main.py (resumen claro)
-
 ✔ Orquesta todo el pipeline
 ✔ Procesa uno o múltiples PDFs
 ✔ Usa extracción, preprocesamiento y clasificación
@@ -560,48 +544,30 @@ if __name__ == "__main__":
 ✔ No expone credenciales
 ✔ Es simple, claro y defendible
 
-✅ Actividad 11 – Manejo de documentos largos
-Descripción de la actividad
+# Actividad 11 – Manejo de documentos largos
 
 En esta actividad se implementa una estrategia de manejo de documentos largos para garantizar que el texto enviado al modelo de lenguaje no exceda los límites de contexto del LLM.
 
-Para ello, se utiliza una técnica de chunking, que consiste en dividir el texto en fragmentos controlados antes de la inferencia.
-
-¿Por qué es necesario el manejo de longitud?
+Se utiliza una técnica de chunking, que consiste en dividir el texto en fragmentos controlados antes de la inferencia.
 
 Los modelos de lenguaje tienen un límite máximo de tokens por solicitud.
 Los documentos PDF extensos (contratos largos, informes, resoluciones) pueden superar fácilmente ese límite.
 
-Sin una estrategia de chunking:
-
-❌ Fallos por exceso de tokens
-
-❌ Pérdida de información
-
-❌ Resultados inconsistentes
-
-Estrategia aplicada
+** Estrategia aplicada **
 
 La solución implementa un chunking simple y efectivo, basado en:
 
 División del texto por longitud aproximada
-
 Procesamiento de fragmentos independientes
-
 Consolidación del resultado final
 
-📌 Esta estrategia es suficiente y defendible para una prueba técnica.
 
 Enfoque técnico
 
 El texto completo es dividido en fragmentos (“chunks”)
-
 Cada fragmento se envía al LLM
-
 Se obtiene una clasificación parcial
-
 Se consolida una clasificación final
-
 Implementación del chunking
 
 📄 Archivo: src/chunking.py
@@ -650,25 +616,8 @@ Justificación de la solución
 Se eligió chunking simple porque:
 
 Es claro y fácil de entender
-
 No depende de librerías externas
-
 Funciona con cualquier modelo GPT
-
 Es suficiente para el alcance de la prueba
 
-La arquitectura queda preparada para estrategias más avanzadas.
-
-📌 Texto recomendado para el README
-
 Para manejar documentos extensos, se implementó una estrategia de chunking que divide el texto en fragmentos controlados antes de enviarlos al modelo de lenguaje, evitando exceder los límites de contexto y garantizando una clasificación robusta.
-
-🎯 Estado
-
-👉 Actividad 11: COMPLETADA
-
-🔎 Nota importante (esto suma puntos)
-
-Puedes mencionar en la entrevista:
-
-“El chunking se aplica solo cuando la longitud del documento lo requiere, manteniendo eficiencia y control de costos.”
