@@ -552,28 +552,6 @@ def chunk_text(text, max_length=3000):
 
     return chunks
 ```
-Estrategia de consolidación
-
-Para la prueba técnica, se utiliza una estrategia simple:
-
-Se toma la categoría más frecuente
-
-Se conserva una justificación representativa
-
-📌 Esto puede evolucionar a:
-
-Prompts de resumen
-
-Votación ponderada
-
-Razonamiento jerárquico
-
-Evidencia de manejo de longitud
-
-✔ Implementación explícita de chunking
-✔ Código modular y reutilizable
-✔ Prevención de límites de contexto
-✔ Manejo correcto de documentos extensos
 
 Justificación de la solución
 
